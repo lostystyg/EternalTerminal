@@ -78,7 +78,7 @@ endif()
 message(STATUS "VCPKG TRIPLET: ${VCPKG_TARGET_TRIPLET}")
 
 # Don't specify languages yet in case we need to bump the cmake version
-project(EternalTCP VERSION 6.2.4 LANGUAGES NONE)
+project(EternalTCP VERSION 6.2.8 LANGUAGES NONE)
 
 if(WIN32)
   message(STATUS "Windows detected.  Bumping up cmake version.")
@@ -107,10 +107,10 @@ find_package(ZLIB REQUIRED)
 find_package(Unwind)
 
 if(DISABLE_VCPKG)
-add_subdirectory(external/Catch2)
-add_subdirectory(external/cxxopts)
-add_subdirectory(external/cpp-httplib)
-add_subdirectory(external/json)
+add_subdirectory(${EXTERNAL_DIR}/Catch2)
+add_subdirectory(${EXTERNAL_DIR}/cxxopts)
+add_subdirectory(${EXTERNAL_DIR}/cpp-httplib)
+add_subdirectory(${EXTERNAL_DIR}/json)
 include_directories(
   ${EXTERNAL_DIR}/cpp-httplib
   ${EXTERNAL_DIR}/simpleini
